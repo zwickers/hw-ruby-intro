@@ -37,21 +37,31 @@ def sum_to_n? arr, n
   return false
 end
 
-puts sum_to_n? [1,2,3,4,5], 5
 # Part 2
 
 def hello(name)
   # YOUR CODE HERE
+  "Hello, #{name}"
 end
 
 def starts_with_consonant? s
-  # YOUR CODE HERE
+  return false if s.length == 0
+
+  first = s.downcase[0]
+
+  if !(first == "a" or first == "e" or first == "i" or first == "o" or first == "u") and first =~ /[a-zA-Z]/
+  	return true
+  else
+  	return false
+  end
 end
 
 def binary_multiple_of_4? s
-  # YOUR CODE HERE
+  return true if s == "0" or s.match? /\A^[10]*(00)\z/
+  return false
 end
 
+puts binary_multiple_of_4? "1010101010100"
 # Part 3
 
 class BookInStock
