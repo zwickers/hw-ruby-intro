@@ -3,8 +3,14 @@
 # Part 1
 
 def sum arr
-  # YOUR CODE HERE
+  result = 0
+  arr.each do |num|
+  	result += num
+  end
+  result
 end
+
+puts sum []
 
 def max_2_sum arr
   # YOUR CODE HERE
