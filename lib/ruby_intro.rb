@@ -10,10 +10,14 @@ def sum arr
   result
 end
 
-puts sum []
-
 def max_2_sum arr
-  # YOUR CODE HERE
+  if arr.length == 0
+  	0
+  elsif arr.length == 1
+    arr[0]
+  else 
+  	arr.sort()[arr.length-1] + arr.sort()[arr.length-2]
+  end
 end
 
 def sum_to_n? arr, n
