@@ -1,3 +1,4 @@
+require 'set'
 # When done, submit this entire file to the autograder.
 
 # Part 1
@@ -21,9 +22,22 @@ def max_2_sum arr
 end
 
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  if arr.length == 0 or arr.length == 1
+  	return false
+  end
+
+  setOfNums = Set.new
+  arr.each do |num|
+    if setOfNums.include?(n - num)
+  	  return true
+  	else 
+  	  setOfNums.add(num)
+    end
+  end
+  return false
 end
 
+puts sum_to_n? [1,2,3,4,5], 5
 # Part 2
 
 def hello(name)
