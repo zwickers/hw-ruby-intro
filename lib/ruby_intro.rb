@@ -40,7 +40,6 @@ end
 # Part 2
 
 def hello(name)
-  # YOUR CODE HERE
   "Hello, #{name}"
 end
 
@@ -61,9 +60,26 @@ def binary_multiple_of_4? s
   return false
 end
 
-puts binary_multiple_of_4? "1010101010100"
 # Part 3
 
 class BookInStock
-# YOUR CODE HERE
+
+	attr_accessor :isbn, :price
+
+	def initialize(isbn, price)
+		raise ArgumentError if price <= 0 or isbn == ""
+		@isbn = isbn
+		@price = price
+	end
+
+	def price_as_string
+		dollars = @price.round(2)
+		dollars = dollars.to_s
+		dollars = "$" + dollars
+		idx = dollars.index(/\./) + 1
+		if dollars[idx..dollars.length-1].length == 1
+			dollars += "0"
+		end
+		return dollars
+	end
 end
